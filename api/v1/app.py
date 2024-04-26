@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 from flask import Flask, jsonify
-from models import storage
-from models.state import State
 from os import getenv as env
 from api.v1.views import app_views
+from models import storage
+from models.state import State
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
