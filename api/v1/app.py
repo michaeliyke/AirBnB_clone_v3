@@ -12,6 +12,12 @@ app.register_blueprint(app_views)
 states = [state.to_dict() for state in storage.all(State).values()]
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    """Returns a 404 error"""
+    return jsonify({"error": "Not found"}), 404
+
+
 @app.teardown_appcontext
 def close_session(response_or_exc):
     """The function to call after each request"""
