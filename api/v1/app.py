@@ -14,17 +14,14 @@ states = [state.to_dict() for state in storage.all(State).values()]
 
 @app.teardown_appcontext
 def close_session(response_or_exc):
+    """The function to call after each request"""
     storage.close()
 
 
 @app.route('/', methods=['GET'], strict_slashes=False)
 def hello():
+    """The home route for now - gets some json data"""
     return jsonify(states)
-
-
-@app.route('/api/v1/status', methods=['GET'], strict_slashes=False)
-def status():
-    return jsonify({"status": "OK"})
 
 
 options = {
@@ -33,5 +30,6 @@ options = {
     "threaded": True,
     "debug": True,
 }
+
 if __name__ == '__main__':
-    app.run(options=options)
+    app.run(**options)
