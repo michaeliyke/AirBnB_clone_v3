@@ -28,7 +28,6 @@ def states_rt():
 def states_id_rt(state_id):
     """Delete, update, or get a state object by id"""
     state = storage.get(State, state_id)
-    print("HERE")
     if not state:
         abort(404)
 
