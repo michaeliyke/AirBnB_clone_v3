@@ -32,6 +32,7 @@ def amenities_rt():
 def amenities_id_rt(amenity_id):
     """Delete, update, or get a amenity object by id"""
     amenity = storage.get(Amenity, amenity_id)
+    # TODO: FIX THIS LATER
     print(amenity, amenity_id)
     if not amenity:
         abort(404)
