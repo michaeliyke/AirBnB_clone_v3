@@ -3,16 +3,16 @@ from flask import Flask, jsonify
 from os import getenv as env
 from api.v1.views import app_views
 from models import storage
-from models.state import State
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False  # Globally set strict_slashes to False
 app.register_blueprint(app_views)
 
 
 @app.errorhandler(404)
 def page_not_found(e):
     """Returns a 404 error"""
-    return jsonify({"error": "Not found"}), 404
+    return (jsonify({"error": "Not found"}), 404)
 
 
 @app.teardown_appcontext
@@ -21,11 +21,10 @@ def close_session(response_or_exc):
     storage.close()
 
 
-@app.route('/', methods=['GET'], strict_slashes=False)
+@app.route('/', methods=['GET'])
 def hello():
-    """The home route for now - gets some json data"""
-    states = [state.to_dict() for state in storage.all(State).values()]
-    return jsonify(states)
+    """The home route for now"""
+    return (jsonify({'status': 'OK'}), 200)
 
 
 options = {

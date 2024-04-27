@@ -6,7 +6,11 @@ from models.review import Review
 
 
 @app_views.route('/reviews', methods=['GET'], strict_slashes=False)
-def reviews():
+@app_views.route('/reviews/<string:id>', methods=['GET'], strict_slashes=False)
+def reviews(id=None):
     """The home route for now - gets some json data"""
+    if id:
+        rv = storage.get(Review, id)
+        return jsonify(rv.to_dict()) if rv else jsonify({"error": "Not found"})
     reviews = [review.to_dict() for review in storage.all(Review).values()]
     return jsonify(reviews)
