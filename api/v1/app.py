@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""The main module for the API"""
+
 from flask import Flask, jsonify
 from flask_cors import CORS
 from os import getenv as env
