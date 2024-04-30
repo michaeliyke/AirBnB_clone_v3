@@ -31,9 +31,9 @@ def reviews_id_rt(review_id):
     if not data:
         abort(400, description="Not a JSON")
 
-    for key, value in data.items():
-        if key not in ['id', 'created_at', 'updated_at', 'user_id', 'place_id']:
-            setattr(review, key, value)
+    for ky, value in data.items():
+        if ky not in ['id', 'created_at', 'updated_at', 'user_id', 'place_id']:
+            setattr(review, ky, value)
     storage.save()
     return (jsonify(review.to_dict()), 200)
 
@@ -45,7 +45,7 @@ def places_id_reviews_rt(place_id):
     if not place:
         abort(404)
 
-    if request.method == 'GET':  # Retrieve all the reviews belonging to a place
+    if request.method == 'GET':  # Retrieve all reviews belonging to a place
         reviews = [review.to_dict() for review in place.reviews]
         return (jsonify(reviews), 200)
 
