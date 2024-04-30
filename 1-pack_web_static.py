@@ -20,4 +20,3 @@ def do_pack():
         return file_name
     except BaseException as e:  # BaseException excludes exit exceptions
         return None
-
