@@ -29,4 +29,3 @@ def status():
 def stats():
     """Returns the staus of the api"""
     return jsonify(objs)
-

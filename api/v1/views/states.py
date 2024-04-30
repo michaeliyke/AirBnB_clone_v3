@@ -49,4 +49,3 @@ def states_id_rt(state_id):
             setattr(state, key, value)
     storage.save()
     return (jsonify(state.to_dict()), 200)
-
