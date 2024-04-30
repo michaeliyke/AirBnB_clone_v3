@@ -148,3 +148,4 @@ class TestFileStorage(unittest.TestCase):
                 self.assertEqual(instance, storage.get(value, instance.id))
                 self.assertNotEqual(instance, storage.get(value, "Not_id"))
         FileStorage._FileStorage__objects = save
+

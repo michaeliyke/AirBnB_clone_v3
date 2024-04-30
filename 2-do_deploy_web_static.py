@@ -28,3 +28,4 @@ def do_deploy(archive_path):
         return True
     except BaseException as e:  # BaseException excludes exit exceptions
         return False
+

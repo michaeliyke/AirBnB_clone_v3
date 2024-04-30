@@ -56,3 +56,4 @@ def states_id_cities_rt(state_id):
     storage.new(city)
     storage.save()
     return (jsonify(city.to_dict()), 201)
+

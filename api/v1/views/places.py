@@ -63,3 +63,4 @@ def cities_id_places_rt(city_id):
     storage.new(place)
     storage.save()
     return (jsonify(place.to_dict()), 201)
+
