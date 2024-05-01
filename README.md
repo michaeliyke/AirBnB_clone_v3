@@ -161,6 +161,6 @@ Second part of Airbnb: Joann Vuong
 
 Third Segment Authors: <!-- Note two white spaces end line, preserve -->  
 Michael C. Iyke - [Github](https://github.com/michaeliyke) / [Twitter](https://twitter.com/michaelciyke)
-
+Jumoke kazeem  - [Github](https://github.com/Jumoke1) /[Twitter](https://twitter.com/jumsbaby)
 ## License
 Public Domain. No copy write protection.
