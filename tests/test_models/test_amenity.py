@@ -3,6 +3,7 @@
 Contains the TestAmenityDocs classes
 """
 
+import os
 from datetime import datetime
 import inspect
 import models
@@ -80,6 +81,8 @@ class TestAmenity(unittest.TestCase):
         else:
             self.assertEqual(amenity.name, "")
 
+    @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
+                     "Testing FileStorage")
     def test_name_attr_db(self):
         """Test for the  DBStorage name attribute"""
         amenity = Amenity()
