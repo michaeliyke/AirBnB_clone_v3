@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""The cities module for the API"""
+
 from api.v1.views import app_views
 from flask import jsonify, request, abort
 from models import storage
