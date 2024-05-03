@@ -8,9 +8,9 @@ from api.v1.views import app_views
 from models import storage
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False  # Globally set strict_slashes to False
 app.register_blueprint(app_views)
-CORS(app)  # Enable CORS for all routes on the app
+# app.url_map.strict_slashes = False  # Globally set strict_slashes to False
+# CORS(app)  # Enable CORS for all routes on the app
 
 
 @app.errorhandler(404)

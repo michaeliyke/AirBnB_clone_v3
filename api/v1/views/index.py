@@ -21,13 +21,13 @@ objs = {
 }
 
 
-@app_views.route('/status', methods=['GET'], strict_slashes=False)
+@app_views.route('/status', methods=['GET'])
 def status():
     """Returns the staus of the api"""
     return jsonify({"status": "OK"})
 
 
-@app_views.route('/stats', methods=['GET'], strict_slashes=False)
+@app_views.route('/stats', methods=['GET'])
 def stats():
     """Returns the staus of the api"""
     return jsonify(objs)
