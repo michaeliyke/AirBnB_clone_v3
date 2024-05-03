@@ -25,12 +25,6 @@ def close_session(response_or_exc):
     storage.close()
 
 
-@app.route('/', methods=['GET'])
-def hello():
-    """The home route for now"""
-    return (jsonify({'status': 'OK'}), 200)
-
-
 options = {
     "host": env("HBNB_API_HOST") or '0.0.0.0',
     "port": env("HBNB_API_PORT") or 5000,
