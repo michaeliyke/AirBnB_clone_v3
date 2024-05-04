@@ -8,8 +8,8 @@ from api.v1.views import app_views
 from models import storage
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False  # Globally set strict_slashes to False
 app.register_blueprint(app_views)
+app.url_map.strict_slashes = False  # Globally set strict_slashes to False
 CORS(app)  # Enable CORS for all routes on the app
 
 
@@ -23,12 +23,6 @@ def page_not_found(e):
 def close_session(response_or_exc):
     """The function to call after each request"""
     storage.close()
-
-
-@app.route('/', methods=['GET'])
-def hello():
-    """The home route for now"""
-    return (jsonify({'status': 'OK'}), 200)
 
 
 options = {
